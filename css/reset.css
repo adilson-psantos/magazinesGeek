@@ -1,0 +1,49 @@
+/* Reset CSS */
+
+/* Aplica a todos os elementos e pseudo-elementos a remoção de margens e paddings padrão, 
+   além de definir o cálculo de largura e altura usando border-box */
+   * {
+    margin: 0; /* Remove a margem padrão de todos os elementos */
+    padding: 0; /* Remove o preenchimento (padding) padrão de todos os elementos */
+    box-sizing: border-box; /* Inclui bordas e paddings no cálculo de largura/altura */
+  }
+  
+  /* Configura estilos básicos para os elementos principais da página */
+  html, body {
+    height: 100%; /* Garante que ocupem toda a altura da janela do navegador */
+    font-family: Arial, sans-serif; /* Define a fonte padrão como Arial ou uma fonte genérica sem serifa */
+    line-height: 1.5; /* Define o espaçamento vertical entre linhas para melhorar a leitura */
+  }
+  
+  /* Remove os estilos padrão de listas não ordenadas e ordenadas */
+  ul, ol {
+    list-style: none; /* Remove os marcadores (bolinhas ou números) padrão das listas */
+  }
+  
+  /* Define estilos básicos para links */
+  a {
+    text-decoration: none; /* Remove o sublinhado padrão dos links */
+    color: inherit; /* Faz com que a cor do link herde a cor do elemento pai */
+  }
+  
+  /* Configura imagens para serem responsivas */
+  img {
+    max-width: 100%; /* Garante que a imagem não ultrapasse a largura do seu contêiner */
+    height: auto; /* Ajusta a altura proporcionalmente à largura */
+    display: block; /* Remove o espaço em branco que imagens inline podem causar */
+  }
+  
+  /* Remove os estilos padrão dos botões */
+  button {
+    background: none; /* Remove o fundo padrão */
+    border: none; /* Remove as bordas padrão */
+    cursor: pointer; /* Define o cursor como uma "mãozinha" ao passar por cima */
+    padding: 0; /* Remove qualquer preenchimento padrão */
+  }
+  
+  /* Configura tabelas para eliminar espaços extras entre células */
+  table {
+    border-collapse: collapse; /* Remove o espaçamento entre bordas das células */
+    border-spacing: 0; /* Garante que não haja espaçamento residual entre células */
+  }
+  
