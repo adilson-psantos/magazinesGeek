@@ -10,6 +10,7 @@
     <!-- Define o título da aba no navegador -->
     <link rel="stylesheet" href="/css/reset.css">
     <link rel="stylesheet" href="/css/style.css">
+    
     <!-- Vincula um arquivo CSS externo para estilizar a página -->
 </head>
 <body>
@@ -28,7 +29,7 @@
         </div>
         <div class="cabecalho__novo__produto">
             <!-- Ícone clicável para redirecionar para a página de inserção de produtos -->
-            <a href="inserir-produto.html">
+            <a href="/html/inserirProduto.html">
                 <img src="/assests/adicionar-prod.png" alt="Adicionar Produto" title="Inserir novo produto">
                 <!-- Imagem representando o botão de adicionar produto -->
             </a>
@@ -42,13 +43,13 @@
                 <!-- Bloco de um produto -->
                 <img src="/assests/heroi_01.png" alt="Imagem do Produto" class="imagem-produto">
                 <!-- Imagem representativa do produto -->
-                <h2 class="titulo-produto">Os Cavaleiros do Zodiaco nº 1</h2>
+                <h2 class="produto__titulo">Os Cavaleiros do Zodiaco nº 1</h2>
                 <!-- Título do produto -->
-                <p class="descricao-produto">Edição de Colecionador</p>
+                <p class="produto__descricao">Edição de Colecionador</p>
                 <!-- Descrição do produto -->
-                <p class="valor-produto">R$ 99,90</p>
+                <p class="produto__valor">R$ 99,90</p>
                 <!-- Valor do produto -->
-                <a href="https://wa.me/5511999999999" class="contato-whatsapp" target="_blank">Contato via WhatsApp</a>
+                <a href="https://wa.me/5511999999999" class="produto__cto__whats" target="_blank">Contato via WhatsApp</a>
                 <!-- Link para contato via WhatsApp, abrindo em uma nova aba -->
             </div>
                 <!-- Seção onde os produtos serão exibidos -->
@@ -56,13 +57,13 @@
                 <!-- Bloco de um produto -->
                 <img src="/assests/gameboy.jpg" alt="Imagem do Produto" class="imagem-produto">
                 <!-- Imagem representativa do produto -->
-                <h2 class="titulo-produto">GameBoy</h2>
+                <h2 class="produto__titulo">GameBoy</h2>
                 <!-- Título do produto -->
-                <p class="descricao-produto">Produto Original + Cartulho do Mario</p>
+                <p class="produto__descricao">Produto Original + Cartulho do Mario</p>
                 <!-- Descrição do produto -->
-                <p class="valor-produto">R$ 499,90</p>
+                <p class="produto__valor">R$ 499,90</p>
                 <!-- Valor do produto -->
-                <a href="https://wa.me/5511999999999" class="contato-whatsapp" target="_blank">Contato via WhatsApp</a>
+                <a href="https://wa.me/5511999999999" class="produto__cto__whats" target="_blank">Contato via WhatsApp</a>
                 <!-- Link para contato via WhatsApp, abrindo em uma nova aba -->
             </div>
             <!-- Replicar o bloco acima para adicionar mais produtos -->
@@ -70,13 +71,13 @@
                 <!-- Bloco de um produto -->
                 <img src="/assests/dreamcast2.jpeg" alt="Imagem do Produto" class="imagem-produto">
                 <!-- Imagem representativa do produto -->
-                <h2 class="titulo-produto">DreamCast</h2>
+                <h2 class="produto__titulo">DreamCast</h2>
                 <!-- Título do produto -->
-                <p class="descricao-produto">3 Jogos Originais e mais 200 jogos com CD de boot</p>
+                <p class="produto__descricao">3 Jogos Originais e mais 200 jogos com CD de boot</p>
                 <!-- Descrição do produto -->
-                <p class="valor-produto">R$ 499,90</p>
+                <p class="produto__valor">R$ 499,90</p>
                 <!-- Valor do produto -->
-                <a href="https://wa.me/5511999999999" class="contato-whatsapp" target="_blank">Contato via WhatsApp</a>
+                <a href="https://wa.me/5511999999999" class="produto__cto__whats" target="_blank">Contato via WhatsApp</a>
                 <!-- Link para contato via WhatsApp, abrindo em uma nova aba -->
             </div>
             <!-- Replicar o bloco acima para adicionar mais produtos -->
@@ -84,33 +85,18 @@
                 <!-- Bloco de um produto -->
                 <img src="/assests/guitar_player_198.jpg" alt="Imagem do Produto" class="imagem-produto">
                 <!-- Imagem representativa do produto -->
-                <h2 class="titulo-produto">DreamCast</h2>
+                <h2 class="produto__titulo">DreamCast</h2>
                 <!-- Título do produto -->
-                <p class="descricao-produto">3 Jogos Originais e mais 200 jogos com CD de boot</p>
+                <p class="produto__descricao">3 Jogos Originais e mais 200 jogos com CD de boot</p>
                 <!-- Descrição do produto -->
-                <p class="valor-produto">R$ 499,90</p>
+                <p class="produto__valor">R$ 499,90</p>
                 <!-- Valor do produto -->
-                <a href="https://wa.me/5511999999999" class="contato-whatsapp" target="_blank">Contato via WhatsApp</a>
+                <a href="https://wa.me/5511999999999" class="produto__cto__whats" target="_blank">Contato via WhatsApp</a>
                 <!-- Link para contato via WhatsApp, abrindo em uma nova aba -->
             </div>
-            <!-- Replicar o bloco acima para adicionar mais produtos -->                   
-        </section>
-        <!--Seção Formulario Produto-->
-        <section class="formulario__produto">
-            <h2>Adicionar Novo Produto</h2><br>
-            <form id="formulario__produto">
-                <input type="text" id="titulo" placeholder="Título do Produto" required><br>
-                <textarea id="descricao" placeholder="Descrição do Produto" required></textarea>
-                <input type="number" id="valor" placeholder="Valor (R$)" required>
-                <input type="file" id="imagem-file" accept="image/*"> 
-                <button type="submit">Adicionar Produto</button><br>
-                <input type="text" id="whatsapp" placeholder="Número do WhatsApp (com DDD)" required>
-                <button type="submit">Adicionar Produto</button><br>
-            </form>
-        </section>
-        <section class="produtos">
-           
-        <script src="/js/script.js"></script>       
+            
+        <script type="module" src="/js/script.js"></script>
+             
         
     </main>
 </body>

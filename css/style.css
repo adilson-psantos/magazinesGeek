@@ -103,14 +103,14 @@ main {
     /* Arredonda os cantos da imagem */
 }
 
-.titulo-produto {
+.produto__titulo {
     font-size: 1.2em;
     /* Aumenta o tamanho da fonte do título */
     margin: 10px 0;
     /* Adiciona espaçamento acima e abaixo do título */
 }
 
-.descricao-produto {
+.produto__descricao {
     color: #555;
     /* Define a cor do texto como cinza escuro */
     font-size: 0.9em;
@@ -119,7 +119,7 @@ main {
     /* Adiciona espaçamento acima e abaixo */
 }
 
-.valor-produto {
+.produto__valor {
     font-size: 1.1em;
     /* Aumenta o tamanho da fonte */
     font-weight: bold;
@@ -130,7 +130,7 @@ main {
     /* Adiciona espaçamento acima e abaixo */
 }
 
-.contato-whatsapp {
+.produto__cto__whats {
     display: inline-block;
     /* Faz o link ser exibido como bloco em linha */
     padding: 8px 12px;
@@ -147,17 +147,8 @@ main {
     /* Define o texto como negrito */
 }
 
-.contato-whatsapp:hover {
+.produto__cto__whats:hover {
     background-color: #1da851;
     /* Escurece a cor de fundo ao passar o mouse */
 }
 
-.formulario-produto{
-    display: flex;
-    padding: 16px 24px;
-    background-color: #1da851;
-    color: white;
-    text-decoration: none;
-    border-radius: 4px;
-    font-weight: bold;
-}
