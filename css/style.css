@@ -1,0 +1,153 @@
+/* Estilo do cabeçalho */
+header {
+    display: flex;
+    /* Organiza os elementos do cabeçalho em linha */
+    justify-content: space-between;
+    /* Distribui os elementos igualmente com espaço entre eles */
+    align-items: center;
+    /* Alinha os itens verticalmente ao centro */
+    background-color: #f4f4f4;
+    /* Define a cor de fundo do cabeçalho */
+    padding: 10px 20px;
+    /* Adiciona espaçamento interno ao cabeçalho */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    /* Aplica uma sombra suave abaixo do cabeçalho */
+}
+
+/* Estilo da logo */
+.logo img {
+    height: 50px;
+    /* Define a altura da imagem da logo */
+}
+
+/* Estilo da barra de busca */
+.busca {
+    display: flex;
+    /* Organiza os elementos da busca em linha */
+    gap: 5px;
+    /* Adiciona um espaçamento entre os elementos */
+}
+
+.busca input {
+    padding: 8px;
+    /* Adiciona espaçamento interno ao campo de entrada */
+    border: 1px solid #ccc;
+    /* Define uma borda cinza clara */
+    border-radius: 4px;
+    /* Arredonda os cantos */
+}
+
+.busca button {
+    padding: 8px 15px;
+    /* Adiciona espaçamento interno ao botão */
+    background-color: #007BFF;
+    /* Define a cor de fundo azul */
+    color: #fff;
+    /* Define a cor do texto como branco */
+    border: none;
+    /* Remove a borda padrão */
+    border-radius: 4px;
+    /* Arredonda os cantos */
+    cursor: pointer;
+    /* Altera o cursor para o estilo de ponteiro */
+}
+
+.busca button:hover {
+    background-color: #0056b3;
+    /* Escurece o fundo do botão ao passar o mouse */
+}
+
+/* Estilo do ícone de novo produto */
+.novo-produto img {
+    height: 50px;
+    /* Define a altura da imagem */
+    cursor: pointer;
+    /* Altera o cursor para o estilo de ponteiro */
+}
+
+/* Estilo da área principal */
+main {
+    padding: 20px;
+    /* Adiciona espaçamento interno */
+}
+
+/* Estilo dos produtos */
+.produtos {
+    display: flex;
+    /* Organiza os produtos em linha */
+    flex-wrap: wrap;
+    /* Permite que os produtos quebrem para a próxima linha */
+    gap: 20px;
+    /* Adiciona espaçamento entre os produtos */
+    justify-content: center;
+    /* Centraliza os produtos na tela */
+}
+
+.produto {
+    border: 1px solid #ddd;
+    /* Define uma borda cinza clara */
+    border-radius: 8px;
+    /* Arredonda os cantos */
+    padding: 15px;
+    /* Adiciona espaçamento interno */
+    max-width: 200px;
+    /* Limita a largura máxima do bloco */
+    text-align: center;
+    /* Centraliza o texto */
+}
+
+.imagem-produto {
+    width: 100%;
+    /* Faz a imagem ocupar toda a largura do bloco */
+    border-radius: 8px;
+    /* Arredonda os cantos da imagem */
+}
+
+.titulo-produto {
+    font-size: 1.2em;
+    /* Aumenta o tamanho da fonte do título */
+    margin: 10px 0;
+    /* Adiciona espaçamento acima e abaixo do título */
+}
+
+.descricao-produto {
+    color: #555;
+    /* Define a cor do texto como cinza escuro */
+    font-size: 0.9em;
+    /* Define o tamanho da fonte como menor */
+    margin: 10px 0;
+    /* Adiciona espaçamento acima e abaixo */
+}
+
+.valor-produto {
+    font-size: 1.1em;
+    /* Aumenta o tamanho da fonte */
+    font-weight: bold;
+    /* Define o texto como negrito */
+    color: #28a745;
+    /* Aplica uma cor verde */
+    margin: 10px 0;
+    /* Adiciona espaçamento acima e abaixo */
+}
+
+.contato-whatsapp {
+    display: inline-block;
+    /* Faz o link ser exibido como bloco em linha */
+    padding: 8px 12px;
+    /* Adiciona espaçamento interno */
+    background-color: #25D366;
+    /* Define a cor de fundo verde */
+    color: white;
+    /* Define a cor do texto como branco */
+    text-decoration: none;
+    /* Remove o sublinhado do link */
+    border-radius: 4px;
+    /* Arredonda os cantos */
+    font-weight: bold;
+    /* Define o texto como negrito */
+}
+
+.contato-whatsapp:hover {
+    background-color: #1da851;
+    /* Escurece a cor de fundo ao passar o mouse */
+}

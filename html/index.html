@@ -1,16 +1,58 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
+<!-- Define o tipo de documento como HTML5 e especifica o idioma como Português do Brasil -->
 <head>
     <meta charset="UTF-8">
+    <!-- Define a codificação como UTF-8 para suportar caracteres especiais -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="reset.css">
-    <link rel="stylesheet" href="style.css"> 
-    <link rel="shortcut icon" href="/assests/magazine.png" type="image/x/icon">  
+    <!-- Configura a página para ser responsiva, adaptando-se ao dispositivo -->
     <title>Magazine's Geek</title>
+    <!-- Define o título da aba no navegador -->
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- Vincula um arquivo CSS externo para estilizar a página -->
 </head>
 <body>
-
-    
+    <header>
+        <!-- Cabeçalho da página, contendo logo, barra de busca e link para novo produto -->
+        <div class="logo">
+            <img src="/assests/magaGeek_00.png" alt="Ícone da Página" class="icone-pagina">
+            <!-- Adiciona o ícone da página -->
+        </div>
+        <div class="busca">
+            <!-- Barra de busca para encontrar produtos -->
+            <input type="text" placeholder="Buscar produtos...">
+            <!-- Campo de entrada para digitar o termo de busca -->
+            <button>Pesquisar</button>
+            <!-- Botão para iniciar a pesquisa -->
+        </div>
+        <div class="novo-produto">
+            <!-- Ícone clicável para redirecionar para a página de inserção de produtos -->
+            <a href="inserir-produto.html">
+                <img src="adicionar-produto.png" alt="Adicionar Produto" title="Inserir novo produto">
+                <!-- Imagem representando o botão de adicionar produto -->
+            </a>
+        </div>
+    </header>
+    <main>
+        <!-- Conteúdo principal da página -->
+        <section class="produtos">
+            <!-- Seção onde os produtos serão exibidos -->
+            <div class="produto">
+                <!-- Bloco de um produto -->
+                <img src="/assests/heroi_01.png" alt="CavZod" class="imagem-produto">
+                <!-- Imagem representativa do produto -->
+                <h2 class="titulo-produto">Os Cavaleiros do Zodiaco nº 1</h2>
+                <!-- Título do produto -->
+                <p class="descricao-produto">Revista Heroi - Edição de Colecionador</p>
+                <!-- Descrição do produto -->
+                <p class="valor-produto">R$ 9,90</p>
+                <!-- Valor do produto -->
+                <a href="https://wa.me/5511999999999" class="contato-whatsapp" target="_blank">Contato via WhatsApp</a>
+                <!-- Link para contato via WhatsApp, abrindo em uma nova aba -->
+            </div>
+            <!-- Replicar o bloco acima para adicionar mais produtos -->
+        </section>
+    </main>
 </body>
-<script src="/js/script.js"></script>
 </html>
