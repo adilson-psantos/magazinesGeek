@@ -15,20 +15,20 @@ header {
 }
 
 /* Estilo da logo */
-.logo img {
+.cabecalho__logo img {
     height: 50px;
     /* Define a altura da imagem da logo */
 }
 
 /* Estilo da barra de busca */
-.busca {
+.cabecalho__busca {
     display: flex;
     /* Organiza os elementos da busca em linha */
     gap: 5px;
     /* Adiciona um espaçamento entre os elementos */
 }
 
-.busca input {
+.cabecalho__busca input {
     padding: 8px;
     /* Adiciona espaçamento interno ao campo de entrada */
     border: 1px solid #ccc;
@@ -37,7 +37,7 @@ header {
     /* Arredonda os cantos */
 }
 
-.busca button {
+.cabecalho__busca button {
     padding: 8px 15px;
     /* Adiciona espaçamento interno ao botão */
     background-color: #007BFF;
@@ -52,13 +52,13 @@ header {
     /* Altera o cursor para o estilo de ponteiro */
 }
 
-.busca button:hover {
+.cabecalho__busca button:hover {
     background-color: #0056b3;
     /* Escurece o fundo do botão ao passar o mouse */
 }
 
 /* Estilo do ícone de novo produto */
-.novo-produto img {
+.cabecalho__novo__produto img {
     height: 50px;
     /* Define a altura da imagem */
     cursor: pointer;
@@ -150,4 +150,14 @@ main {
 .contato-whatsapp:hover {
     background-color: #1da851;
     /* Escurece a cor de fundo ao passar o mouse */
+}
+
+.formulario-produto{
+    display: flex;
+    padding: 16px 24px;
+    background-color: #1da851;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
 }

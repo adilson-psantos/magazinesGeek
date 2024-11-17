@@ -1,22 +1,21 @@
-// Seleciona o formulário pelo seu ID
+// Obtém o formulário e a seção onde os produtos serão exibidos
 const formulario = document.getElementById("form-novo-produto");
-// Seleciona a seção onde os produtos serão exibidos
 const secaoProdutos = document.querySelector(".produtos");
 
-// Adiciona um evento ao formulário para capturar o envio dos dados
+// Adiciona um evento de envio ao formulário
 formulario.addEventListener("submit", function (evento) {
-    evento.preventDefault(); // Impede o comportamento padrão de recarregar a página ao enviar o formulário
+    evento.preventDefault(); // Impede o recarregamento da página ao enviar o formulário
 
-    // Captura os valores dos campos do formulário
+    // Obtém os valores dos campos do formulário
     const titulo = document.getElementById("titulo").value;
     const descricao = document.getElementById("descricao").value;
     const valor = document.getElementById("valor").value;
     const imagem = document.getElementById("imagem").value;
     const whatsapp = document.getElementById("whatsapp").value;
 
-    // Cria um novo elemento `div` para representar o produto
+    // Cria um novo elemento para o produto
     const produto = document.createElement("div");
-    produto.classList.add("produto"); // Adiciona a classe CSS `produto` para estilização
+    produto.classList.add("produto"); // Adiciona a classe "produto" para estilização
 
     // Define o conteúdo HTML do novo produto
     produto.innerHTML = `
@@ -27,14 +26,14 @@ formulario.addEventListener("submit", function (evento) {
         <p class="descricao-produto">${descricao}</p>
         <!-- Adiciona a descrição do produto -->
         <p class="valor-produto">R$ ${parseFloat(valor).toFixed(2)}</p>
-        <!-- Adiciona o valor do produto, formatado com duas casas decimais -->
+        <!-- Adiciona o valor do produto formatado -->
         <a href="https://wa.me/55${whatsapp}" class="contato-whatsapp" target="_blank">Contato via WhatsApp</a>
-        <!-- Adiciona o link para o WhatsApp do vendedor -->
+        <!-- Adiciona o link para o WhatsApp -->
     `;
 
-    // Adiciona o novo produto na seção de produtos
+    // Insere o novo produto na seção de produtos
     secaoProdutos.appendChild(produto);
 
-    // Limpa os campos do formulário após a adição do produto
+    // Limpa os campos do formulário após o envio
     formulario.reset();
 });
