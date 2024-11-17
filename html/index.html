@@ -5,54 +5,66 @@
     <meta charset="UTF-8">
     <!-- Define a codificação como UTF-8 para suportar caracteres especiais -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Configura a página para ser responsiva, adaptando-se ao dispositivo -->
-    <title>Magazine's Geek</title>
+    <!-- Configura a página para ser responsiva -->
+    <title>Loja de Revistas e Games</title>
     <!-- Define o título da aba no navegador -->
     <link rel="stylesheet" href="/css/reset.css">
     <link rel="stylesheet" href="/css/style.css">
-    <!-- Vincula um arquivo CSS externo para estilizar a página -->
+    <!-- Vincula o arquivo CSS externo para estilização -->
 </head>
 <body>
     <header>
-        <!-- Cabeçalho da página, contendo logo, barra de busca e link para novo produto -->
+        <!-- Cabeçalho da página -->
         <div class="logo">
-            <img src="/assests/magaGeek_00.png" alt="Ícone da Página" class="icone-pagina">
-            <!-- Adiciona o ícone da página -->
+            <!-- Div para o ícone da página -->
+            <img src="/assests/magaGeek_00.png" alt="Ícone da Página Magazine's Geek" class="icone-pagina">
+            <!-- Ícone representando a página -->
         </div>
         <div class="busca">
-            <!-- Barra de busca para encontrar produtos -->
+            <!-- Div para a barra de busca -->
             <input type="text" placeholder="Buscar produtos...">
-            <!-- Campo de entrada para digitar o termo de busca -->
+            <!-- Campo de entrada para busca -->
             <button>Pesquisar</button>
-            <!-- Botão para iniciar a pesquisa -->
+            <!-- Botão para executar a busca -->
         </div>
         <div class="novo-produto">
-            <!-- Ícone clicável para redirecionar para a página de inserção de produtos -->
+            <!-- Div para o ícone de adicionar novos produtos -->
             <a href="inserir-produto.html">
-                <img src="adicionar-produto.png" alt="Adicionar Produto" title="Inserir novo produto">
-                <!-- Imagem representando o botão de adicionar produto -->
+                <img src="/assests/adicionar-prod.png" alt="Adicionar Produto" title="Inserir novo produto">
+                <!-- Ícone representando o botão de adicionar produto -->
             </a>
         </div>
     </header>
+
     <main>
         <!-- Conteúdo principal da página -->
+        <section class="formulario-produto">
+            <!-- Seção para o formulário de adição de novos produtos -->
+            <h2>Adicionar Novo Produto</h2>
+            <!-- Título da seção -->
+            <form id="form-novo-produto">
+                <!-- Formulário para adicionar novos produtos -->
+                <input type="text" id="titulo" placeholder="Título do Produto" required>
+                <!-- Campo para o título do produto -->
+                <textarea id="descricao" placeholder="Descrição do Produto" required></textarea>
+                <!-- Campo para a descrição do produto -->
+                <input type="number" id="valor" placeholder="Valor (R$)" required>
+                <!-- Campo para o valor do produto -->
+                <input type="url" id="imagem" placeholder="URL da Imagem" required>
+                <!-- Campo para a URL da imagem -->
+                <input type="text" id="whatsapp" placeholder="Número do WhatsApp (com DDD)" required>
+                <!-- Campo para o número de contato do WhatsApp -->
+                <button type="submit">Adicionar Produto</button>
+                <!-- Botão para enviar os dados -->
+            </form>
+        </section>
+
         <section class="produtos">
-            <!-- Seção onde os produtos serão exibidos -->
-            <div class="produto">
-                <!-- Bloco de um produto -->
-                <img src="/assests/heroi_01.png" alt="CavZod" class="imagem-produto">
-                <!-- Imagem representativa do produto -->
-                <h2 class="titulo-produto">Os Cavaleiros do Zodiaco nº 1</h2>
-                <!-- Título do produto -->
-                <p class="descricao-produto">Revista Heroi - Edição de Colecionador</p>
-                <!-- Descrição do produto -->
-                <p class="valor-produto">R$ 9,90</p>
-                <!-- Valor do produto -->
-                <a href="https://wa.me/5511999999999" class="contato-whatsapp" target="_blank">Contato via WhatsApp</a>
-                <!-- Link para contato via WhatsApp, abrindo em uma nova aba -->
-            </div>
-            <!-- Replicar o bloco acima para adicionar mais produtos -->
+            <!-- Seção onde os produtos serão exibidos dinamicamente -->
         </section>
     </main>
+
+    <script src="script.js"></script>
+    <!-- Vincula o arquivo JavaScript externo -->
 </body>
 </html>
