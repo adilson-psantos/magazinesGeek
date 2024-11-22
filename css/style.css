@@ -1,4 +1,4 @@
-/* Estilo do código permanece o mesmo */
+/* Estilo geral */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -9,6 +9,7 @@ body {
     min-height: 100vh;
     overflow-x: hidden;
 }
+
 header {
     background-color: #333;
     color: #fff;
@@ -16,27 +17,33 @@ header {
     display: flex;
     align-items: center;
 }
+
 header img {
     height: 50px;
     margin-right: 1rem;
 }
+
 nav {
     display: flex;
     justify-content: center;
     background-color: #444;
 }
+
 nav a {
     color: #fff;
     padding: 1rem;
     text-decoration: none;
 }
+
 nav a:hover {
     background-color: #555;
 }
+
 .container {
     display: flex;
     flex: 1;
 }
+
 .sidebar {
     width: 300px;
     background-color: #ddd;
@@ -44,19 +51,23 @@ nav a:hover {
     box-shadow: 2px 0 5px rgba(0,0,0,0.1);
     overflow-y: auto;
 }
+
 .sidebar h2 {
     text-align: center;
 }
+
 .sidebar form {
     display: flex;
     flex-direction: column;
 }
+
 .sidebar input, .sidebar select, .sidebar textarea {
     padding: 0.5rem;
     margin-bottom: 1rem;
     border: 1px solid #ccc;
     border-radius: 4px;
 }
+
 .sidebar button {
     padding: 0.5rem;
     background-color: #333;
@@ -66,20 +77,25 @@ nav a:hover {
     cursor: pointer;
     font-size: 1rem;
 }
+
 .sidebar button:hover {
     background-color: #555;
 }
+
 .button-container {
     display: flex;
     gap: 10px;
 }
+
 .button-container button {
     flex: 1;
 }
+
 main {
     padding: 2rem;
     flex: 1;
 }
+
 .product-list {
     display: flex;
     flex-wrap: wrap;
@@ -87,6 +103,7 @@ main {
     margin-top: 2rem;
     justify-content: space-between;
 }
+
 .product-item {
     background-color: #fff;
     padding: 0.5rem;
@@ -98,11 +115,13 @@ main {
     flex-direction: column;
     align-items: center;
 }
+
 .product-item img {
     max-width: 100%;
     height: auto;
     margin-bottom: 0.5rem;
 }
+
 .whatsapp-button {
     padding: 0.5rem;
     background-color: #25D366;
@@ -114,9 +133,11 @@ main {
     display: inline-block;
     margin-top: 0.5rem;
 }
+
 .whatsapp-button:hover {
     background-color: #128C7E;
 }
+
 footer {
     background-color: #333;
     color: #fff;
@@ -124,24 +145,17 @@ footer {
     padding: 0.5rem;
     width: 100%;
 }
+
 footer a {
     color: #fff;
     margin: 0 0.5rem;
     text-decoration: none;
 }
+
 footer a:hover {
     text-decoration: underline;
 }
-@media (max-width: 768px) {
-    .product-item {
-        width: calc(50% - 1rem);
-    }
-}
-@media (max-width: 480px) {
-    .product-item {
-        width: calc(100% - 1rem);
-    }
-}
+
 .success-message {
     padding: 1rem;
     background-color: #28a745;
@@ -150,3 +164,16 @@ footer a:hover {
     margin-top: 1rem;
     border-radius: 4px;
 }
+
+@media (max-width: 768px) {
+    .product-item {
+        width: calc(50% - 1rem);
+    }
+}
+
+@media (max-width: 480px) {
+    .product-item {
+        width: calc(100% - 1rem);
+    }
+}
+

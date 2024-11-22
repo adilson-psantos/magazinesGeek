@@ -1,61 +1,52 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="/css/reset.css"></script>
-    <script src="/css/style.css"></script>
+    <title>Magazine's Geek</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <img src="logo.png" alt="Logo da Magazine's Geek">
+        <img src="logo.png" alt="Logo">
         <h1>Magazine's Geek</h1>
     </header>
     <nav>
-        <a href="#home" aria-label="Ir para a página inicial">Home</a>
-        <a href="#produtos" aria-label="Ver produtos">Produtos</a>
-        <a href="#contato" aria-label="Entrar em contato">Contato</a>
+        <a href="#">Início</a>
+        <a href="#">Produtos</a>
+        <a href="#">Contato</a>
     </nav>
     <div class="container">
-        <div class="sidebar">
+        <aside class="sidebar">
             <h2>Cadastrar Produto</h2>
             <form id="productForm">
-                <input type="text" id="produto" name="produto" placeholder="Produto" required>
-                <select id="tipo" name="tipo" required>
-                    <option value="revista">Revista</option>
-                    <option value="livro">Livro</option>
-                    <option value="cd">CD</option>
-                    <option value="game">Game</option>
-                </select>
-                <textarea id="descricao" name="descricao" rows="1" placeholder="Descrição do Produto" required></textarea>
-                <input type="number" id="preco" name="preco" step="0.01" placeholder="Preço do Produto (R$)" required>
-                <input type="text" id="nome" name="nome" placeholder="Nome" required>
-                <input type="tel" id="whatsapp" name="whatsapp" pattern="\d{11}" placeholder="Contato do WhatsApp" required>
-                <input type="file" id="imagem" name="imagem" accept="image/*" required>
+                <input type="text" id="produto" placeholder="Produto" required>
+                <input type="text" id="tipo" placeholder="Tipo" required>
+                <textarea id="descricao" placeholder="Descrição" required></textarea>
+                <input type="number" id="preco" placeholder="Preço (R$)" required>
+                <input type="text" id="nome" placeholder="Seu Nome" required>
+                <input type="text" id="whatsapp" placeholder="WhatsApp (11 dígitos)" required>
+                <input type="file" id="imagem" accept="image/*" required>
                 <div class="button-container">
-                    <button type="submit">Cadastrar</button>
+                    <button type="submit">Adicionar Produto</button>
                     <button type="button" id="clearButton">Limpar</button>
                 </div>
             </form>
-            <div id="successMessage" class="success-message" style="display:none;">Produto cadastrado com sucesso!</div>
-        </div>
-        <main>
-            <h2>Bem-vindo à Magazine's Geek!</h2>
-            <p>Aqui você encontra os melhores produtos geeks e nerds.</p>
-            <div class="product-list" id="productList">
-                <!-- Produtos cadastrados aparecerão aqui -->
+            <div id="successMessage" class="success-message" style="display: none;">
+                Produto adicionado com sucesso!
             </div>
+        </aside>
+        <main>
+            <h2>Produtos Cadastrados</h2>
+            <div id="productList" class="product-list"></div>
         </main>
     </div>
     <footer>
-        <p>&copy; 2024 Magazine's Geek. Todos os direitos reservados.</p>
-        <p>
-            <a href="https://github.com/seuusuario" target="_blank">GitHub</a> |
-            <a href="https://instagram.com/seuusuario" target="_blank">Instagram</a> |
-            <a href="https://linkedin.com/in/seuusuario" target="_blank">LinkedIn</a>
-        </p>
+        <p>&copy; 2024 Magazine's Geek</p>
+        <a href="#">Termos de Uso</a>
+        <a href="#">Política de Privacidade</a>
     </footer>
-    <script src="/js/script.js"></script>
+    <script src="scripts.js"></script>
 </body>
 </html>
+
