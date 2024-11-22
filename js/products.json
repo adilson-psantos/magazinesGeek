@@ -1,0 +1,80 @@
+<script>
+    const API_URL = 'http://localhost:3000/api/products';
+
+    // Função para carregar produtos do servidor
+    function carregarProdutos() {
+        fetch(API_URL)
+            .then(response => response.json())
+            .then(produtos => {
+                const listaProdutos = document.getElementById('productList');
+                listaProdutos.innerHTML = ''; // Limpar lista
+
+                produtos.forEach(produto => {
+                    const item = document.createElement('div');
+                    item.className = 'product-item';
+                    item.innerHTML = `
+                        <img src="${produto.imagem}" alt="Imagem do Produto">
+                        <h3>${produto.produto}</h3>
+                        <p><strong>Tipo:</strong> ${produto.tipo}</p>
+                        <p><strong>Descrição:</strong> ${produto.descricao}</p>
+                        <p><strong>Preço:</strong> R$ ${produto.preco}</p>
+                        <p><strong>Nome:</strong> ${produto.nome}</p>
+                        <a href="https://wa.me/55${produto.whatsapp}" class="whatsapp-button" target="_blank">WhatsApp</a>
+                    `;
+                    listaProdutos.appendChild(item);
+                });
+            })
+            .catch(error => console.error('Erro ao carregar produtos:', error));
+    }
+
+    // Submeter formulário
+    document.getElementById('productForm').addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        const produto = document.getElementById('produto').value;
+        const tipo = document.getElementById('tipo').value;
+        const descricao = document.getElementById('descricao').value;
+        const preco = document.getElementById('preco').value;
+        const nome = document.getElementById('nome').value;
+        const whatsapp = document.getElementById('whatsapp').value;
+        const imagem = document.getElementById('imagem').files[0];
+
+        const reader = new FileReader();
+        reader.onload = function (e) {
+            const novoProduto = {
+                produto,
+                tipo,
+                descricao,
+                preco,
+                nome,
+                whatsapp,
+                imagem: e.target.result,
+            };
+
+            fetch(API_URL, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(novoProduto),
+            })
+                .then(response => {
+                    if (!response.ok) throw new Error('Erro ao salvar produto.');
+                    return response.json();
+                })
+                .then(() => {
+                    carregarProdutos();
+                    document.getElementById('successMessage').style.display = 'block';
+                    setTimeout(() => {
+                        document.getElementById('successMessage').style.display = 'none';
+                    }, 3000);
+                    document.getElementById('productForm').reset();
+                })
+                .catch(error => console.error('Erro ao salvar produto:', error));
+        };
+        reader.readAsDataURL(imagem);
+    });
+
+    // Carregar produtos ao iniciar a página
+    window.onload = carregarProdutos;
+</script>

@@ -1,39 +1,79 @@
-// Obtém o formulário e a seção onde os produtos serão exibidos
-const formulario = document.getElementById("form-novo-produto");
-const secaoProdutos = document.querySelector(".produtos");
+    // Função para carregar produtos do localStorage
+    function loadProducts() {
+        const productList = document.getElementById('productList');
+        const products = JSON.parse(localStorage.getItem('products')) || [];
+        
+        // Exibir os produtos armazenados
+        products.forEach(product => {
+            const productItem = document.createElement('div');
+            productItem.className = 'product-item';
+            productItem.innerHTML = `
+                <img src="${product.imagem}" alt="Imagem do Produto">
+                <h3>${product.produto}</h3>
+                <p><strong>Tipo:</strong> ${product.tipo}</p>
+                <p><strong>Descrição:</strong> ${product.descricao}</p>
+                <p><strong>Preço:</strong> R$ ${product.preco}</p>
+                <p><strong>Nome:</strong> ${product.nome}</p>
+                <a href="https://wa.me/55${product.whatsapp}" class="whatsapp-button" target="_blank">WhatsApp</a>
+            `;
+            productList.appendChild(productItem);
+        });
+    }
 
-// Adiciona um evento de envio ao formulário
-formulario.addEventListener("submit", function (evento) {
-    evento.preventDefault(); // Impede o recarregamento da página ao enviar o formulário
+    document.getElementById('productForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        
+        const produto = document.getElementById('produto').value;
+        const tipo = document.getElementById('tipo').value;
+        const descricao = document.getElementById('descricao').value;
+        const preco = document.getElementById('preco').value;
+        const nome = document.getElementById('nome').value;
+        const whatsapp = document.getElementById('whatsapp').value;
+        const imagem = document.getElementById('imagem').files[0];
 
-    // Obtém os valores dos campos do formulário
-    const titulo = document.getElementById("titulo").value;
-    const descricao = document.getElementById("descricao").value;
-    const valor = document.getElementById("valor").value;
-    const imagem = document.getElementById("imagem").value;
-    const whatsapp = document.getElementById("whatsapp").value;
+        if (!/^\d{11}$/.test(whatsapp)) {
+            alert('Por favor, insira um número de WhatsApp válido com 11 dígitos.');
+            return;
+        }
 
-    // Cria um novo elemento para o produto
-    const produto = document.createElement("div");
-    produto.classList.add("produto"); // Adiciona a classe "produto" para estilização
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            // Armazenar os produtos no localStorage
+            const products = JSON.parse(localStorage.getItem('products')) || [];
+            products.push({
+                produto,
+                tipo,
+                descricao,
+                preco,
+                nome,
+                whatsapp,
+                imagem: e.target.result
+            });
+            localStorage.setItem('products', JSON.stringify(products));
 
-    // Define o conteúdo HTML do novo produto
-    produto.innerHTML = `
-        <img src="${imagem}" alt="${titulo}" class="imagem-produto">
-        <!-- Adiciona a imagem do produto -->
-        <h2 class="titulo-produto">${titulo}</h2>
-        <!-- Adiciona o título do produto -->
-        <p class="descricao-produto">${descricao}</p>
-        <!-- Adiciona a descrição do produto -->
-        <p class="valor-produto">R$ ${parseFloat(valor).toFixed(2)}</p>
-        <!-- Adiciona o valor do produto formatado -->
-        <a href="https://wa.me/55${whatsapp}" class="contato-whatsapp" target="_blank">Contato via WhatsApp</a>
-        <!-- Adiciona o link para o WhatsApp -->
-    `;
+            // Atualizar a lista de produtos
+            loadProducts();
 
-    // Insere o novo produto na seção de produtos
-    secaoProdutos.appendChild(produto);
+            // Exibir mensagem de sucesso
+            document.getElementById('successMessage').style.display = 'block';
 
-    // Limpa os campos do formulário após o envio
-    formulario.reset();
-});
+            // Resetar o formulário
+            document.getElementById('productForm').reset();
+
+            // Ocultar mensagem após alguns segundos
+            setTimeout(function() {
+                document.getElementById('successMessage').style.display = 'none';
+            }, 3000);
+        };
+        reader.readAsDataURL(imagem);
+    });
+
+    // Função para limpar o formulário
+    document.getElementById('clearButton').addEventListener('click', function() {
+        document.getElementById('productForm').reset();
+    });
+
+    // Carregar os produtos quando a página for carregada
+    window.onload = loadProducts;
+
+    

@@ -1,103 +1,61 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-<!-- Define o tipo de documento como HTML5 e especifica o idioma como Português do Brasil -->
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <!-- Define a codificação como UTF-8 para suportar caracteres especiais -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Configura a página para ser responsiva, adaptando-se ao dispositivo -->
-    <title>Loja de Revistas e Games</title>
-    <!-- Define o título da aba no navegador -->
-    <link rel="stylesheet" href="/css/reset.css">
-    <link rel="stylesheet" href="/css/style.css">
-    
-    <!-- Vincula um arquivo CSS externo para estilizar a página -->
+    <title>Document</title>
+    <script src="/css/reset.css"></script>
+    <script src="/css/style.css"></script>
 </head>
 <body>
     <header>
-        <!-- Cabeçalho da página, contendo logo, barra de busca e link para novo produto -->
-        <div class="cabecalho__logo">
-            <img src="/assests/banner_magazinesGeek_00.jpeg" alt="Ícone da Página" class="icone-pagina">
-            <!-- Adiciona o ícone da página -->
-        </div>
-        <div class="cabecalho__busca">
-            <!-- Barra de busca para encontrar produtos -->
-            <input type="text" placeholder="Buscar produtos...">
-            <!-- Campo de entrada para digitar o termo de busca -->
-            <button>Pesquisar</button>
-            <!-- Botão para iniciar a pesquisa -->
-        </div>
-        <div class="cabecalho__novo__produto">
-            <!-- Ícone clicável para redirecionar para a página de inserção de produtos -->
-            <a href="/html/inserirProduto.html">
-                <img src="/assests/adicionar-prod.png" alt="Adicionar Produto" title="Inserir novo produto">
-                <!-- Imagem representando o botão de adicionar produto -->
-            </a>
-        </div>
+        <img src="logo.png" alt="Logo da Magazine's Geek">
+        <h1>Magazine's Geek</h1>
     </header>
-    <main>
-        <!-- Conteúdo principal da página -->
-        <section class="produtos">
-            <!-- Seção onde os produtos serão exibidos -->
-            <div class="produto">
-                <!-- Bloco de um produto -->
-                <img src="/assests/heroi_01.png" alt="Imagem do Produto" class="imagem-produto">
-                <!-- Imagem representativa do produto -->
-                <h2 class="produto__titulo">Os Cavaleiros do Zodiaco nº 1</h2>
-                <!-- Título do produto -->
-                <p class="produto__descricao">Edição de Colecionador</p>
-                <!-- Descrição do produto -->
-                <p class="produto__valor">R$ 99,90</p>
-                <!-- Valor do produto -->
-                <a href="https://wa.me/5511999999999" class="produto__cto__whats" target="_blank">Contato via WhatsApp</a>
-                <!-- Link para contato via WhatsApp, abrindo em uma nova aba -->
+    <nav>
+        <a href="#home" aria-label="Ir para a página inicial">Home</a>
+        <a href="#produtos" aria-label="Ver produtos">Produtos</a>
+        <a href="#contato" aria-label="Entrar em contato">Contato</a>
+    </nav>
+    <div class="container">
+        <div class="sidebar">
+            <h2>Cadastrar Produto</h2>
+            <form id="productForm">
+                <input type="text" id="produto" name="produto" placeholder="Produto" required>
+                <select id="tipo" name="tipo" required>
+                    <option value="revista">Revista</option>
+                    <option value="livro">Livro</option>
+                    <option value="cd">CD</option>
+                    <option value="game">Game</option>
+                </select>
+                <textarea id="descricao" name="descricao" rows="1" placeholder="Descrição do Produto" required></textarea>
+                <input type="number" id="preco" name="preco" step="0.01" placeholder="Preço do Produto (R$)" required>
+                <input type="text" id="nome" name="nome" placeholder="Nome" required>
+                <input type="tel" id="whatsapp" name="whatsapp" pattern="\d{11}" placeholder="Contato do WhatsApp" required>
+                <input type="file" id="imagem" name="imagem" accept="image/*" required>
+                <div class="button-container">
+                    <button type="submit">Cadastrar</button>
+                    <button type="button" id="clearButton">Limpar</button>
+                </div>
+            </form>
+            <div id="successMessage" class="success-message" style="display:none;">Produto cadastrado com sucesso!</div>
+        </div>
+        <main>
+            <h2>Bem-vindo à Magazine's Geek!</h2>
+            <p>Aqui você encontra os melhores produtos geeks e nerds.</p>
+            <div class="product-list" id="productList">
+                <!-- Produtos cadastrados aparecerão aqui -->
             </div>
-                <!-- Seção onde os produtos serão exibidos -->
-            <div class="produto">
-                <!-- Bloco de um produto -->
-                <img src="/assests/gameboy.jpg" alt="Imagem do Produto" class="imagem-produto">
-                <!-- Imagem representativa do produto -->
-                <h2 class="produto__titulo">GameBoy</h2>
-                <!-- Título do produto -->
-                <p class="produto__descricao">Produto Original + Cartulho do Mario</p>
-                <!-- Descrição do produto -->
-                <p class="produto__valor">R$ 499,90</p>
-                <!-- Valor do produto -->
-                <a href="https://wa.me/5511999999999" class="produto__cto__whats" target="_blank">Contato via WhatsApp</a>
-                <!-- Link para contato via WhatsApp, abrindo em uma nova aba -->
-            </div>
-            <!-- Replicar o bloco acima para adicionar mais produtos -->
-            <div class="produto">
-                <!-- Bloco de um produto -->
-                <img src="/assests/dreamcast2.jpeg" alt="Imagem do Produto" class="imagem-produto">
-                <!-- Imagem representativa do produto -->
-                <h2 class="produto__titulo">DreamCast</h2>
-                <!-- Título do produto -->
-                <p class="produto__descricao">3 Jogos Originais e mais 200 jogos com CD de boot</p>
-                <!-- Descrição do produto -->
-                <p class="produto__valor">R$ 499,90</p>
-                <!-- Valor do produto -->
-                <a href="https://wa.me/5511999999999" class="produto__cto__whats" target="_blank">Contato via WhatsApp</a>
-                <!-- Link para contato via WhatsApp, abrindo em uma nova aba -->
-            </div>
-            <!-- Replicar o bloco acima para adicionar mais produtos -->
-            <div class="produto">
-                <!-- Bloco de um produto -->
-                <img src="/assests/guitar_player_198.jpg" alt="Imagem do Produto" class="imagem-produto">
-                <!-- Imagem representativa do produto -->
-                <h2 class="produto__titulo">DreamCast</h2>
-                <!-- Título do produto -->
-                <p class="produto__descricao">3 Jogos Originais e mais 200 jogos com CD de boot</p>
-                <!-- Descrição do produto -->
-                <p class="produto__valor">R$ 499,90</p>
-                <!-- Valor do produto -->
-                <a href="https://wa.me/5511999999999" class="produto__cto__whats" target="_blank">Contato via WhatsApp</a>
-                <!-- Link para contato via WhatsApp, abrindo em uma nova aba -->
-            </div>
-            
-        <script type="module" src="/js/script.js"></script>
-             
-        
-    </main>
+        </main>
+    </div>
+    <footer>
+        <p>&copy; 2024 Magazine's Geek. Todos os direitos reservados.</p>
+        <p>
+            <a href="https://github.com/seuusuario" target="_blank">GitHub</a> |
+            <a href="https://instagram.com/seuusuario" target="_blank">Instagram</a> |
+            <a href="https://linkedin.com/in/seuusuario" target="_blank">LinkedIn</a>
+        </p>
+    </footer>
+    <script src="/js/script.js"></script>
 </body>
 </html>
