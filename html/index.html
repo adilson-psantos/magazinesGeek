@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Magazine's Geek</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
     <header>
-        <img src="logo.png" alt="Logo">
+        <img src="/assests/magaGeek_00.jpeg" alt="Logo">
         <h1>Magazine's Geek</h1>
     </header>
     <nav>
@@ -20,15 +20,20 @@
         <aside class="sidebar">
             <h2>Cadastrar Produto</h2>
             <form id="productForm">
-                <input type="text" id="produto" placeholder="Produto" required>
-                <input type="text" id="tipo" placeholder="Tipo" required>
-                <textarea id="descricao" placeholder="Descrição" required></textarea>
-                <input type="number" id="preco" placeholder="Preço (R$)" required>
-                <input type="text" id="nome" placeholder="Seu Nome" required>
-                <input type="text" id="whatsapp" placeholder="WhatsApp (11 dígitos)" required>
-                <input type="file" id="imagem" accept="image/*" required>
+                <input type="text" id="produto" name="produto" placeholder="Produto" required>
+                <select id="tipo" name="tipo" required>
+                    <option value="revista">Revista</option>
+                    <option value="livro">Livro</option>
+                    <option value="cd">CD</option>
+                    <option value="game">Game</option>
+                </select>
+                <textarea id="descricao" name="descricao" rows="1" placeholder="Descrição do Produto" required></textarea>
+                <input type="number" id="preco" name="preco" step="0.01" placeholder="Preço do Produto (R$)" required>
+                <input type="text" id="nome" name="nome" placeholder="Nome" required>
+                <input type="tel" id="whatsapp" name="whatsapp" pattern="\d{11}" placeholder="Contato do WhatsApp" required>
+                <input type="file" id="imagem" name="imagem" accept="image/*" required>
                 <div class="button-container">
-                    <button type="submit">Adicionar Produto</button>
+                    <button type="submit">Cadastrar</button>
                     <button type="button" id="clearButton">Limpar</button>
                 </div>
             </form>
@@ -38,7 +43,7 @@
         </aside>
         <main>
             <h2>Produtos Cadastrados</h2>
-            <div id="productList" class="product-list"></div>
+            <div class="product-list" id="productList"></div>
         </main>
     </div>
     <footer>
@@ -46,7 +51,9 @@
         <a href="#">Termos de Uso</a>
         <a href="#">Política de Privacidade</a>
     </footer>
-    <script src="scripts.js"></script>
+    <script src="/js/script.js" type="module"></script>
+    console.log("Arquivo JavaScript carregado com sucesso!");
+
 </body>
 </html>
 
